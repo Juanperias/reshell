@@ -9,7 +9,7 @@ use dos::put::puts;
 
 #[no_mangle]
 extern "C" fn start() -> ! { 
-    puts("Welcome to the retro shell!"); 
+    print!("Welcome to the retro shell\n:)");
     dos::program::exit();
 
     loop {}
