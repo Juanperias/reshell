@@ -5,11 +5,12 @@ mod dos;
 mod fmt;
 
 use core::panic::PanicInfo;
-use dos::put::puts;
 
 #[no_mangle]
-extern "C" fn start() -> ! { 
-    print!("Welcome to the retro shell\n:)");
+extern "C" fn start() -> ! {
+    println!("Welcome to the retro shell");
+    println!("it works");    
+
     dos::program::exit();
 
     loop {}
