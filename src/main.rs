@@ -9,11 +9,13 @@ use core::panic::PanicInfo;
 #[no_mangle]
 extern "C" fn start() -> ! {
     println!("Welcome to the retro shell");
-    println!("it works");    
+    println!("it works");
 
-    dos::program::exit();
-
-    loop {}
+    loop {
+        if crate::dos::keyboard::read() as char == 'c' {
+            dos::program::exit();
+        }
+    }
 }
 
 

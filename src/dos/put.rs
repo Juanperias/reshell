@@ -20,9 +20,9 @@ pub fn puts(text: &str) {
 }
 
 pub fn put_args(args: Arguments) {
-    let s = args.as_str().unwrap();
-
-    puts(s);
+    if let Some(s) = args.as_str() {
+        puts(s);
+    }
 }
 
 
