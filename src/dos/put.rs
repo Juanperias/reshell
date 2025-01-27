@@ -4,11 +4,11 @@ use core::fmt::Arguments;
 pub fn putc(char: u8) {
     unsafe {
         asm!(
-            "mov ah, 0x0e",
-            "mov al, {}",
-            "int 0x10",
+            "mov dl, {}",
+            "mov ah, 02h",
+            "int 0x21",
             in(reg_byte) char
-        )
+        );
     }
 }
 
