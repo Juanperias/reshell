@@ -3,23 +3,15 @@
 
 mod dos;
 mod fmt;
+mod shell;
 
 use core::panic::PanicInfo;
 
 #[no_mangle]
-extern "C" fn start() -> ! {
+extern "C" fn start() {
     println!("Welcome to the retro shell");
-    print!(">");
-
-    loop {
-        let key = dos::keyboard::read();
-        if key != 0 {
-            if key == b'\r' { 
-                dos::program::exit()
-            }
-            dos::put::putc(key); 
-        }
-    }
+    
+    shell::run_shell();
 }
 
 #[panic_handler]

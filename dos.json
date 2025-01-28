@@ -14,8 +14,6 @@
   "features": "-mmx,-sse,+soft-float",
   "dynamic-linking": false,
   "relocation-model": "pic",
-  "code-model": "kernel",
-  "exe-suffix": ".elf",
   "has-rpath": false,
   "no-default-libraries": true,
   "position-independent-executables": false
