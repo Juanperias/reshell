@@ -13,7 +13,6 @@ pub fn putc(char: u8) {
 }
 
 pub fn puts(text: &str) {
-    putc(b' ');
     for letter in text.bytes() {
         putc(letter);
     }

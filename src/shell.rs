@@ -1,16 +1,20 @@
 use crate::dos::keyboard;
-use crate::dos::put::putc;
-use crate::print;
+use crate::dos::put::{puts, putc};
+use crate::{print, println};
 
 pub fn run_shell() {
-    print!("> ");
+    print!(">> ");
     loop {
         let key = keyboard::read();
 
         if key == 13 {
             putc(b'\r');
             putc(b'\n');
-            print!("> ");
+            puts("Running... ");
+            putc(b'\r');
+            putc(b'\n');
+
+            puts("> ");
         } else {
             putc(key);
         }
